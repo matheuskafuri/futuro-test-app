@@ -12,6 +12,7 @@ import AppProvider from './src/hooks'
 import { Cat } from './src/screens/Cat'
 import { Form } from './src/screens/Form'
 import { Home } from './src/screens/Home'
+import { StatusBar } from 'expo-status-bar'
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
@@ -19,6 +20,11 @@ export default function App() {
   return (
     <AppProvider>
     <PaperProvider>
+      <StatusBar 
+          style="light" 
+          translucent
+          backgroundColor="transparent"
+        />
       <NavigationContainer >
       <Drawer.Navigator 
         screenOptions={{ headerShown: false }} 
