@@ -3,10 +3,11 @@ import api from '../../services/api'
 
 import { Image, View, StyleSheet } from 'react-native'
 import { ActivityIndicator, Colors, Button } from 'react-native-paper';
-import { Header} from '../../components/Header';
+import { Header } from '../../components/Header';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface ResponseData {
-    url: string;
+  url: string;
 }
 export function Cat() {
   const [loading, setLoading] = useState(false);
@@ -30,25 +31,29 @@ export function Cat() {
   }, [])
 
   return (
-    <View style={styles.container}>
-      <Header title='Gato'/>
+    <LinearGradient
+      colors={[Colors.blue900, Colors.indigo800, Colors.indigo900]}
+      start={{ x: 0, y: 0.8 }}
+      end={{ x: 0.9, y: 1 }}
+      style={styles.container}
+    >
+      <Header title='Gato' subTitle="Encontre um gatinho"/>
       <View style={styles.content}>
-        {loading ? <ActivityIndicator animating={true} size="large" color={Colors.orange700} /> :
+        {loading ? <ActivityIndicator animating={true} size="large" color={Colors.orange700} style={{ marginBottom: 272}} /> :
           <Image source={{ uri: image || ' ' }} style={styles.img} />
         }
-        <Button mode="contained" color={Colors.indigo800} onPress={fetchCat}>
+        <Button mode="contained" style={styles.button} onPress={fetchCat}>
           Mais um!
         </Button>
       </View>
 
-    </View>
+    </LinearGradient>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e0e0e0',
   },
   content: {
     flex: 1,
@@ -59,5 +64,14 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     marginBottom: 20,
+  },
+  button: {
+    width: 180,
+    height: 48,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 16,
+    backgroundColor: Colors.orange900, 
   }
 })

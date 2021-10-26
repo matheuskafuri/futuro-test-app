@@ -16,8 +16,8 @@ export function Header({title, subTitle}: Props) {
   }
 
   return (
-    <Appbar.Header style={{ backgroundColor: Colors.indigo800 }}>
-      <Appbar.Action icon="menu" onPress={()=>handleOpenMenu()} />
+    <Appbar.Header style={{ backgroundColor: Colors.blue900 }}>
+      <Appbar.Action icon="menu" style={{ backgroundColor: Colors.orange900 }} onPress={()=>handleOpenMenu()} />
       <Appbar.Content title={title} subtitle={subTitle} />
     </Appbar.Header>
   );
