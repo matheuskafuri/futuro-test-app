@@ -7,8 +7,8 @@ import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 import { Header } from '../../components/Header'
-import { ActivityIndicator, Button, Colors, TextInput, Title } from 'react-native-paper'
 import { maskPhone } from '../../utils/phoneMask'
+import { ActivityIndicator, Button, Colors, TextInput, Title } from 'react-native-paper'
 
 interface IFormData {
   name: string
