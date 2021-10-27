@@ -32,7 +32,7 @@ export function Cat() {
 
   return (
     <LinearGradient
-      colors={[Colors.blue900, Colors.indigo800, Colors.indigo900]}
+      colors={[Colors.blue800, Colors.blue900, Colors.indigo900]}
       start={{ x: 0, y: 0.8 }}
       end={{ x: 0.9, y: 1 }}
       style={styles.container}

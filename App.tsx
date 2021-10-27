@@ -16,7 +16,7 @@ import { StatusBar } from 'expo-status-bar'
 
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
-export default function App() {
+export default function App(){
   return (
     <AppProvider>
     <PaperProvider>
